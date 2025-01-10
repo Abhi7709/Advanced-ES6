@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Call back</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        //Call back function is function which is called in another function
+
+        //in other way it is connection between other function
+
+        function display(some){
+            document.getElementById("demo").innerHTML=some
+        }
+        function cal(a,b){
+            let sum=a+b;
+            return sum
+        }
+        let res=cal(10,20)
+        display(res)
+
+    </script>
+</body>
+</html>
