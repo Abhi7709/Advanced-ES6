@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Promises</title>
 </head>
+
 <body>
-    
+    <script>
+        //pending:the task is in initial state
+        //fulfilled : the task completed successfully and then result is variable
+        //rejected: the task is failed and an error is provided
+
+        let checkeven = new Promise((resolve, reject) => {
+            let number = 5;
+            if (number % 2 === 0) {
+                resolve("the number is even")
+            }
+            else {
+                reject("the number is odd")
+            }
+        })
+        checkeven.then((message) =>
+            console.log(message))
+            .catch((error) => console.log(error))
+
+
+        //promises.all
+
+        Promise.all([
+            Promise.resolve("task 1 completed"),
+            Promise.resolve("task 2 completed"),
+            Promise.reject("task 3 failed")
+        ])
+        .then((results)=>console.log(results))
+        .catch((error)=>console.log(error))
+    </script>
 </body>
+
 </html>
