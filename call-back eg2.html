@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>call back</title>
+</head>
+
+<body>
+    <script>
+        let stocks = {
+            Fruits: ['mango', 'apple', 'guava', 'banana'],
+            liquid: ['water', 'ice', 'milk'],
+            holder: ['cone', 'cup', 'stick'],
+            toppings: ['chocolate', 'peanuts', 'dryFruits']
+        }
+
+        let order = (fruit_name, call_production) => {
+            setTimeout(() => {
+                console.log(`${stocks.Fruits[fruit_name]} was selected`)
+            }, 850)
+            call_production()
+
+        }
+
+        let production = (() => {
+            setTimeout(() => {
+                console.log('fruits is chopped')
+
+                setTimeout(() => {
+                    console.log('Machine is started')
+
+                    setTimeout(() => {
+                        console.log(`${stocks.liquid[2]} was added`)
+
+                        setTimeout(() => {
+                            console.log(`ice cream was placed ${stocks.holder[2]}`)
+
+                            setTimeout(() => {
+                                console.log(`${stocks.toppings[2]} was added`)
+
+                                setTimeout(() => {
+                                    console.log('ice cream is ready to served')
+
+                                    setTimeout(() => {
+                                        console.log('ice cream served, Thank You!')
+                                    }, 2000)
+                                }, 1000)
+                            }, 2000)
+                        }, 1000)
+                    }, 2000)
+                }, 2000)
+            },1000)
+        })
+        order(0,production)
+    </script>
+</body>
+
+</html>
