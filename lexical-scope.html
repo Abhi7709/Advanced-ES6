@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>lexical-scope</title>
+</head>
+<body>
+   <script>
+    function outer(){
+        let outerValue='i am the outer scope'
+        function inner(){
+            console.log(outerValue)
+        }
+        inner()
+    }
+    outer()
+   </script> 
+</body>
+</html>
